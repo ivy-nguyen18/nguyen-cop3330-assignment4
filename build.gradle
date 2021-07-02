@@ -25,6 +25,4 @@ test {
     useJUnitPlatform()
 }
 
-application {
-    mainClass = 'ucf.assignments.HelloWorld'
-}
+mainClassName = 'ucf.assignments.ListManager'

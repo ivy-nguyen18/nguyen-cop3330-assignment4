@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ToDoLists{
+    main()
+    start()
+}
+class ToDoListsController{}
+
+javafx.Application <|-- ToDoLists
+
+ToDoLists -- ToDoListsController
+
+@enduml
