@@ -16,6 +16,10 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 }
 
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.7'
+}
+
 javafx {
     version = "16"
     modules = [ 'javafx.controls', 'javafx.fxml' ]

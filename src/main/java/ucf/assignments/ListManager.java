@@ -17,6 +17,9 @@ public class ListManager extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
+
+            //create a directory called List Manager to hold all the files created from Lists
+
             Parent root = FXMLLoader.load(getClass().getResource("ListManager.fxml"));
 
             Scene scene = new Scene(root);
