@@ -13,7 +13,9 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class ToDoListController implements Initializable {
+public class ToDoListController {
+
+    private ToDoList selectedList;
 
     //configure the table
     @FXML private TableView<Item> itemTableView;
@@ -28,7 +30,7 @@ public class ToDoListController implements Initializable {
     @FXML private TextField descriptionTextField;
     @FXML private DatePicker dueDatePicker;
 
-    @FXML public ObservableList<Item> itemObservableList;
+    @FXML private ObservableList<Item> itemObservableList;
 
 
     @FXML
@@ -50,7 +52,9 @@ public class ToDoListController implements Initializable {
 
     @FXML
     public void saveChangesButtonClicked(ActionEvent actionEvent) {
-        //save current snapshot of observable list to current JSON file
+        //copy elements in ObservableList to ArrayList
+        //serialize using java serialization
+        //write to current list file
     }
 
     @FXML
@@ -81,14 +85,18 @@ public class ToDoListController implements Initializable {
         //display observable list
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb){
+    public void initialize(){
         //set up table
         //load observableListItems to make list viewable
     }
 
-    public void ObservableListItems(){
+    @FXML
+    public void initData(ToDoList list){
+        //make passed in list equal to selectedList
+        //read in list file to load previous items
+    }
+
+    private void ObservableListItems(){
         //iterate through observable list
             //add the attributes of the Item object to list
         //set the table
@@ -142,6 +150,12 @@ public class ToDoListController implements Initializable {
                     //parse the string into new pattern
                 //if the string is empty
                     //return null
+    }
+
+    private void loadFromPrevious(){
+        //read this list file
+        //read into a list of type Item
+        //copy list to current ObservableList
     }
 
 }

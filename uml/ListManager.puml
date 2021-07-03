@@ -1,14 +1,105 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class ToDoLists{
-    main()
-    start()
+class ListManager{
+    + main()
+    + start()
 }
-class ToDoListsController{}
 
-javafx.Application <|-- ToDoLists
+class ListManagerController{
+    - newListTextField: TextField
+    - toDoListTableView: Tableview<ToDoList>
+    - lists: ObservableList<ToDoList>
 
-ToDoLists -- ToDoListsController
+    + initialize()
+    + openListScene(MouseEvent)
+    + editCell(TableColumn.CellEditEvent)
+    + createNewListButtonClicked(ActionEvent)
+    + saveAllListsButtonClicked((ActionEvent)
+    + deleteListsButtonClicked(ActionEvent)
+    + getLists():ObservableList<ToDoList>
+    - deleteDirectoryOfLists(List<String> folderNames)
+    - observableListItems()
+    - initTable()
+    - initColumns()
+    - editColumns()
+    - loadFromPrevious()
+    - makeNewDirectory(ToDoList list)
+    - makeSerializationFile(ToDoList list)
+}
+
+class ToDoList{
+    - itemsArrayList: ArrayList<Item>
+    - listName: SimpleStringProperty
+    - pathToList: Path
+    - itemsFile: File
+
+    + getItemsArrayList(): ArrayList<Item>
+    + setItemsArrayList(ArrayList<Item>)
+    + getPathToList(): Path
+    + getItemsFile(): File
+    + setItemsFile(File)
+    + getListName(): String
+    + listNameProperty(): SimpleStringProperty
+    + setListName(String)
+}
+
+class ToDoListController{
+    - itemTableView: TableView<Item>
+    - isCompletedColumn: TableColumn<Item, CheckBox>
+    - itemNameColumn: TableColumn<Item, String>
+    - descriptionColumn: TableColumn<Item, String>
+    - dueDateColumn: TableColumn<Item, LocalDate>
+    - isComplete: CheckBox
+    - itemNameTextField: TextField
+    - descriptionTextField: TextField
+    - dueDatePicker: DatePicker
+    - itemObservableList: ObservableList<Item>
+
+    + addItemButtonClicked(ActionEvent)
+    + deleteItemsButtonClicked(ActionEvent)
+    + saveChangesButtonClicked(ActionEvent)
+    + backToListManagerButtonClicked(ActionEvent)
+    + viewCompletedOnlyClicked(ActionEvent)
+    + viewUncompletedOnlyButtonClicked(ActionEvent)
+    + viewAllClicked(ActionEvent)
+    + initialize()
+    + initData(ToDoList)
+    - ObservableListItems()
+    - initTable()
+    - initColumns()
+    - editColumns()
+    - editDueDate()
+    - editDescription()
+    - editStatus()
+    - dateConverter()
+    - loadFromPrevious()
+
+}
+
+class Item{
+    - isComplete: CheckBox
+    - item: SimpleStringProperty
+    - description: SimpleStringProperty
+    - dueDate: LocalDate
+
+    + Item(CheckBox, String, String, LocalDate)
+    + isComplete(): CheckBox
+    + setComplete(CheckBox)
+    + getItem(): String
+    + itemProperty(): SimpleStringProperty
+    + setItem(String)
+    + getDescription(): String
+    + descriptionProperty(): SimpleStringProperty
+    + setDescription(String)
+    + getDueDate(): LocalDate
+    + setDueDate(LocalDate)
+}
+
+javafx.Application <|-- ListManager
+ListManager -- ListManagerController
+ListManagerController -- ToDoListController
+ToDoList -- ToDoListController
+ToDoList -- Item
 
 @enduml

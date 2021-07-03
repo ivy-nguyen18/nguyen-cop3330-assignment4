@@ -11,9 +11,10 @@ import javafx.scene.control.TextField;
 
 import java.awt.event.MouseEvent;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
-public class ListManagerController implements Initializable {
+public class ListManagerController {
 
     @FXML private TextField newListTextField;
 
@@ -23,17 +24,21 @@ public class ListManagerController implements Initializable {
 
     @FXML private ObservableList<ToDoList> lists = FXCollections.observableArrayList();
 
-    @FXML public void tableCellClickedOnce(MouseEvent mouseEvent) {
+    @FXML public void openListScene(MouseEvent mouseEvent) {
         //if the event is clicked once
-            //create parent node and load the ToDoList.fxml from Resources
+            //create new FXMLLoader object
+            //set the loader location to ToDoList.fxml
+            //create parent node and load the loader
             //Initialize Scene and set Scene to show parent
+            //initialize ToDoListController and use loader to get the controller
+            //using controller object, call init data and get the selected ToDoList from the table
             //Set stage
-            //Set scene onto window
-            //show the window
+            //Set scene onto stage
+            //set stage to show
     }
 
     @FXML
-    public void tableCellClickedTwice(TableColumn.CellEditEvent editCell) {
+    public void editCell(TableColumn.CellEditEvent editCell) {
         //Set the selected item to an ToDoList object
         //call setter to revise the list Name with the editCell and set as string
     }
@@ -45,11 +50,14 @@ public class ListManagerController implements Initializable {
         //Call name setter and initialize with name text field
         //get all items in table as list and add the new list into table
         //create new directory to the list
+        //create empty serialization file
     }
 
     @FXML
     public void saveAllListsButtonClicked(ActionEvent actionEvent) {
-        //save current snapshot of observable list to JSON file
+        //copy elements in ObservableList to ArrayList
+        //serialize using java serialization
+        //write to current List Manager file
     }
 
     @FXML
@@ -68,14 +76,21 @@ public class ListManagerController implements Initializable {
         return lists;
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    public void initialize() {
         //load saved lists from files
         //set up table
         //load observableListItems to make list viewable
     }
 
-    public void ObservableListItems(){
+    private void deleteDirectoryOfLists(List<String> folderNames){
+        //for each loop that iterates through folderNames
+            //finds the directory of where folder is located
+            //deletes folder
+    }
+
+
+    private void observableListItems(){
         //iterate through observable list
         //add the attributes of the ToDoLists object to list
         //set the table
@@ -97,7 +112,18 @@ public class ListManagerController implements Initializable {
         //allow for multiple selection
     }
 
-    public void loadFromSavedFiles(){
-        //read from JSON file
+    private void loadFromPrevious(){
+        //read current file
+        //read into a list of type ToDoList
+        //copy list to current ObservableList
     }
+
+    private void makeNewDirectory(ToDoList list){
+        //make a directory with the new folder name in directory ListManager
+    }
+
+    private void makeSerializationFile(ToDoList list){
+        //create empty serialization file in list object
+    }
+
 }
