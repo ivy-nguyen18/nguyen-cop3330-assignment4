@@ -14,19 +14,22 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class ListManagerController {
 
+    //initialize the table
     @FXML private TextField newListTextField;
-
     @FXML private TableView<ToDoList> toDoListTableView;
-
     @FXML private TableColumn<ToDoList, String> listNameColumn;
 
     @FXML private ObservableList<ToDoList> lists = FXCollections.observableArrayList();
+
+    private ArrayList<ToDoList> toDoArrayList;
 
     @FXML public void openListScene(MouseEvent mouseEvent) {
         //if the event is clicked once
@@ -79,27 +82,28 @@ public class ListManagerController {
         //load observableListItems to make list viewable
     }
 
-    private void changeListName(String oldListName){
+    public void changeListName(String newListName){
         //call setter to revise the list Name
     }
 
-    private void saveAlLists(){
+    public File saveAlLists(ObservableList<ToDoList> allLists, File listManager){
         //copy elements in ObservableList to ArrayList
         //serialize using java serialization
         //write to current List Manager file
+        return listManager;
     }
 
-    private void deleteLists(ObservableList<ToDoList> deleteLists){
-        //create Observable list of type ToDoList to contain the entire ToDoLists in table
-
+    public ObservableList<ToDoList> deleteLists(ObservableList<ToDoList> deleteLists, ObservableList<ToDoList> entireList){
         //for loop over the selected rows
             //remove the ToDoList objects from the table
             //call deleteDirectoryOfList
+        return entireList;
     }
 
     private void deleteDirectoryOfList(String folderName){
         //finds the directory of where folder is located
         //deletes folder
+        //handle folders that are not found with catch box
     }
 
 
@@ -125,10 +129,11 @@ public class ListManagerController {
         //allow for multiple selection
     }
 
-    private void loadFromPrevious(){
-        //read current file
+    public ObservableList<ToDoList> loadFromPrevious(File listManager){
+        //read listManager file
         //read into a list of type ToDoList
         //copy list to current ObservableList
+        return lists;
     }
 
     private void makeNewDirectory(ToDoList list){
@@ -147,10 +152,16 @@ public class ListManagerController {
     private void createNewList(){
         //call makeRootDirectory
         //Initialize ToDoList with a new list
-        //Call name setter and initialize with name text field
-        //get all items in table as list and add the new list into table
+        //get name from text field
+        //call addNewListToLists
         //create new directory to the list
         //create empty serialization file
+    }
+
+    public ObservableList<ToDoList> addNewListToLists(String listName){
+        //call setter and initialize object's list name with listName
+        //add items to list of items already on the table
+        return lists;
     }
 
 }

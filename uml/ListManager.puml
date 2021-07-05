@@ -10,22 +10,30 @@ class ListManagerController{
     - newListTextField: TextField
     - toDoListTableView: Tableview<ToDoList>
     - lists: ObservableList<ToDoList>
+    - toDoArrayList: ArrayList<ToDoList>
 
     + initialize()
     + openListScene(MouseEvent)
     + editCell(TableColumn.CellEditEvent)
     + createNewListButtonClicked(ActionEvent)
-    + saveAllListsButtonClicked((ActionEvent)
+    + saveAllListsButtonClicked(ActionEvent)
     + deleteListsButtonClicked(ActionEvent)
     + getLists():ObservableList<ToDoList>
-    - deleteDirectoryOfLists(List<String> folderNames)
+    + changeListName(String)
+    + saveAlLists(ObservableList<ToDoList>, File): File
+    + addNewListToLists(String): ObservableList<ToDoList>
+    + deleteLists(ObservableList<ToDoList>, ObservableList<ToDoList>): ObservableList<ToDoList>
+    - deleteDirectoryOfLists(String folderName)
     - observableListItems()
     - initTable()
     - initColumns()
     - editColumns()
-    - loadFromPrevious()
-    - makeNewDirectory(ToDoList list)
-    - makeSerializationFile(ToDoList list)
+    - loadFromPrevious(File): ObservableList<ToDoList>
+    - makeNewDirectory(ToDoList)
+    - makeSerializationFile(ToDoList)
+    - makeRootDirectory()
+    - createNewList()
+
 }
 
 class ToDoList{
