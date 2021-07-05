@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class ListManagerController {
 
-    //initialize the table
+    //configure the table
     @FXML private TextField newListTextField;
     @FXML private TableView<ToDoList> toDoListTableView;
     @FXML private TableColumn<ToDoList, String> listNameColumn;
