@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Ivy Nguyen
+ */
 package ucf.assignments;
 
 import javafx.application.Application;
@@ -17,8 +21,6 @@ public class ListManager extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-
-            //create a directory called List Manager to hold all the files created from Lists
 
             Parent root = FXMLLoader.load(getClass().getResource("ListManager.fxml"));
 

@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Ivy Nguyen
+ */
 package ucf.assignments;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -17,7 +21,7 @@ public class ToDoList {
     }
 
     public void setItemsArrayList(ArrayList<Item> itemsArrayList) {
-        this.itemsArrayList = itemsArrayList;
+        //set the arrayList;
     }
 
     public Path getPathToList() {
@@ -25,7 +29,7 @@ public class ToDoList {
     }
 
     public void setPathToList(Path pathToList) {
-        this.pathToList = pathToList;
+        //set pathToList;
     }
 
     public File getItemsFile() {
@@ -33,7 +37,7 @@ public class ToDoList {
     }
 
     public void setItemsFile(File itemsFile) {
-        this.itemsFile = itemsFile;
+        //set ItemsFile;
     }
 
     public String getListName() {
@@ -45,7 +49,7 @@ public class ToDoList {
     }
 
     public void setListName(String listName) {
-        this.listName.set(listName);
+        //set list name;
     }
 
 

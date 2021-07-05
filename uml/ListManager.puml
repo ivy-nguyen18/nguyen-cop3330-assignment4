@@ -55,6 +55,7 @@ class ToDoListController{
     - descriptionTextField: TextField
     - dueDatePicker: DatePicker
     - itemObservableList: ObservableList<Item>
+    - selectedList: ToDoList
 
     + addItemButtonClicked(ActionEvent)
     + deleteItemsButtonClicked(ActionEvent)
@@ -65,6 +66,16 @@ class ToDoListController{
     + viewAllClicked(ActionEvent)
     + initialize()
     + initData(ToDoList)
+    + viewUncompletedOnly(FilteredList<Item>): FilteredList<Item>
+    + viewCompletedOnly(FilteredList<Item>): FilteredList<Item>
+    + viewAll(FilteredList<Item>): FilteredList<Item>
+    + addItem(CheckBox isComplete, String item, String description, LocalDate dueDate, ToDoList selectedList): ToDoList
+    + saveChanges()
+    + deleteItems(ObservableList<Item>, ObservableList<Item>): ObservableList<Item>
+    + setChangedDueDate(LocalDate)
+    + setChangedDescription(String)
+    + setChangedStatus(CheckBox)
+    - observableListToArrayList(): ArrayList<Item>
     - ObservableListItems()
     - initTable()
     - initColumns()

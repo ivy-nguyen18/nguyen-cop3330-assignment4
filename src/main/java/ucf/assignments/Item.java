@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Ivy Nguyen
+ */
 package ucf.assignments;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -23,8 +27,8 @@ public class Item {
         return isComplete;
     }
 
-    public void setComplete(CheckBox complete) {
-        isComplete = complete;
+    public void setComplete(CheckBox isComplete) {
+        //set isComplete;
     }
 
     public String getItem() {
@@ -36,7 +40,7 @@ public class Item {
     }
 
     public void setItem(String item) {
-        this.item.set(item);
+        //set Item;
     }
 
     public String getDescription() {
@@ -48,7 +52,7 @@ public class Item {
     }
 
     public void setDescription(String description) {
-        this.description.set(description);
+        //set description;
     }
 
     public LocalDate getDueDate() {
@@ -56,7 +60,7 @@ public class Item {
     }
 
     public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
+        //set due date;
     }
 
 }

@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Ivy Nguyen
+ */
 package ucf.assignments;
 
 import javafx.collections.FXCollections;
@@ -40,35 +44,26 @@ public class ListManagerController {
     @FXML
     public void editCell(TableColumn.CellEditEvent editCell) {
         //Set the selected item to an ToDoList object
-        //call setter to revise the list Name with the editCell and set as string
+        //set new edited cell name to a string
+        //call changeListName
     }
 
 
     @FXML
     public void createNewListButtonClicked(ActionEvent actionEvent) {
-        //Initialize ToDoList with a new list
-        //Call name setter and initialize with name text field
-        //get all items in table as list and add the new list into table
-        //create new directory to the list
-        //create empty serialization file
+        //call createNewList
     }
 
     @FXML
     public void saveAllListsButtonClicked(ActionEvent actionEvent) {
-        //copy elements in ObservableList to ArrayList
-        //serialize using java serialization
-        //write to current List Manager file
+        //call saveAllLists
     }
 
     @FXML
     public void deleteListsButtonClicked(ActionEvent actionEvent) {
         //create ObservableList of type ToDoList for the selected rows
-        //create Observable list of type ToDoList to contain the entire ToDoLists in table
-
         //get the rows that were selected
-
-        //for loop over the selected rows
-            //remove the ToDoList objects from the table
+        //call deleteLists
     }
 
     public ObservableList <ToDoList> getLists(){
@@ -80,13 +75,31 @@ public class ListManagerController {
     public void initialize() {
         //load saved lists from files
         //set up table
+        //make table editable (true)
         //load observableListItems to make list viewable
     }
 
-    private void deleteDirectoryOfLists(List<String> folderNames){
-        //for each loop that iterates through folderNames
-            //finds the directory of where folder is located
-            //deletes folder
+    private void changeListName(String oldListName){
+        //call setter to revise the list Name
+    }
+
+    private void saveAlLists(){
+        //copy elements in ObservableList to ArrayList
+        //serialize using java serialization
+        //write to current List Manager file
+    }
+
+    private void deleteLists(ObservableList<ToDoList> deleteLists){
+        //create Observable list of type ToDoList to contain the entire ToDoLists in table
+
+        //for loop over the selected rows
+            //remove the ToDoList objects from the table
+            //call deleteDirectoryOfList
+    }
+
+    private void deleteDirectoryOfList(String folderName){
+        //finds the directory of where folder is located
+        //deletes folder
     }
 
 
@@ -124,6 +137,20 @@ public class ListManagerController {
 
     private void makeSerializationFile(ToDoList list){
         //create empty serialization file in list object
+    }
+
+    private void makeRootDirectory(){
+        //if size of observableList = 0
+            //create a root directory called ListManager to store all the ToDoLists
+    }
+
+    private void createNewList(){
+        //call makeRootDirectory
+        //Initialize ToDoList with a new list
+        //Call name setter and initialize with name text field
+        //get all items in table as list and add the new list into table
+        //create new directory to the list
+        //create empty serialization file
     }
 
 }
