@@ -69,6 +69,11 @@ public class ListManagerController {
         //call deleteLists
     }
 
+    @FXML
+    public void sortByDueDate(){
+        //tableview allows for sorting of columns
+    }
+
     public ObservableList <ToDoList> getLists(){
         //return the data on the table as an observable list of ToDoLists
         return lists;

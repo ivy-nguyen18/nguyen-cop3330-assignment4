@@ -72,6 +72,7 @@ class ToDoListController{
     + viewCompletedOnlyClicked(ActionEvent)
     + viewUncompletedOnlyButtonClicked(ActionEvent)
     + viewAllClicked(ActionEvent)
+    + sortByDueDate()
     + initialize()
     + initData(ToDoList)
     + viewUncompletedOnly(FilteredList<Item>): FilteredList<Item>
